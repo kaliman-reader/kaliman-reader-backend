@@ -2,7 +2,7 @@
   "author": "misaelabanto",
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "esbuild index.ts --minify --format=cjs --sourcemap --platform=node --target=node2015 --outfile=dist/index.js",
+    "build": "esbuild index.ts --bundle --external:aws-sdk --minify --format=cjs --sourcemap --platform=node --target=node2015 --outfile=dist/index.js",
     "postbuild": "cd dist && zip -r index.zip index.js*",
     "esbuild": "esbuild"
   },
